@@ -1,4 +1,4 @@
-// const app = getApp()
+const dayjs = require('dayjs')
 
 let dates = []
 
@@ -23,15 +23,15 @@ Page({
   onLoad: function(options) {
     let _this = this
 
-    let day = new Date()
-    dates = [day.toISOString().substr(0, 10)]
-    for (let i in [1, 2, 3, 4, 5, 6]) {
-      day.setDate(day.getDate() + 1)
-      dates.push(day.toISOString().substr(0, 10))
+    let today = dayjs()
+    dates = []
+    for (let i of [0, 1, 2, 3, 4, 5, 6]) {
+      let day = today.add(i, 'day')
+      dates.push(day.format('YYYY-MM-DD'))
     }
 
     _this.setData({
-      data: undefined,
+      data: 0,
       dates: dates,
       choosedDate: dates[0]
     })
