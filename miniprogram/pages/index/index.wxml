@@ -1,0 +1,75 @@
+<view>
+  <view class="nav">
+    <scroll-view scroll-x="{{true}}" class="sub-nav">
+      <view
+        wx:for="{{dates}}"
+        wx:key="index"
+        class="nav-item date {{choosedDate == item ? 'choosed' : ''}}"
+        data-date="{{item}}"
+        bindtap="tapDate"
+      >
+        {{item}}
+      </view>
+    </scroll-view>
+    <scroll-view scroll-x="{{true}}" class="sub-nav">
+      <view
+        wx:for="{{campuses}}"
+        wx:key="index"
+        class="nav-item {{choosedCampus == item ? 'choosed' : ''}}"
+        data-campus="{{item}}"
+        bindtap="tapCampus"
+      >
+        {{item}}
+      </view>
+    </scroll-view>
+    <scroll-view scroll-x="true" class="sub-nav">
+      <view
+        wx:for="{{buildings[choosedCampus]}}"
+        wx:key="index"
+        class="nav-item {{choosedBuilding == item ? 'choosed' : ''}}"
+        data-building="{{item}}"
+        bindtap="tapBuilding"
+      >
+        {{item}}
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class="table">
+    <view class="tr comment">
+      <view class="status free"></view><view class="comment-item">空闲</view>
+      <view class="status inuse"></view><view class="comment-item">有课</view> 
+    </view>
+    <view 
+      wx:for="{{data[choosedBuilding]}}"
+      wx:for-index="roomName"
+      wx:for-item="statusList"
+      wx:key="roomName"
+      class="tr"
+    >
+      <view class="td room-name">{{roomName}}</view>
+      <view class="td status-list">
+        <view
+          wx:for="{{[1, 2, 3, 4, 5]}}"
+          wx:for-item="n"
+          wx:key="n"
+          class="status {{statusList[n-1] == 1 ? 'inuse' : 'free'}}"
+        ></view>
+        <view class="delimiter"></view>
+        <view
+          wx:for="{{[6, 7, 8, 9, 10]}}"
+          wx:for-item="n"
+          wx:key="n"
+          class="status {{statusList[n-1] == 1 ? 'inuse' : 'free'}}"
+        ></view>
+        <view class="delimiter"></view>
+        <view
+          wx:for="{{[11, 12, 13, 14]}}"
+          wx:for-item="n"
+          wx:key="n"
+          class="status {{statusList[n-1] == 1 ? 'inuse' : 'free'}}"
+        ></view>
+      </view>
+    </view>
+  </view>
+</view>

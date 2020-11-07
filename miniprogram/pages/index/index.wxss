@@ -1,0 +1,115 @@
+page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: white;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background-color: #336DA3;
+  color: white;
+  z-index: 1000;
+}
+
+.sub-nav {
+  white-space: nowrap;
+  display: flex;
+  padding-bottom: 8px;
+}
+
+.nav-item {
+  display: inline-block;
+  font-size: small;
+  border-radius: 10px;
+  padding: 0.3em 0.6em;
+  margin-left: 8px;
+}
+
+.nav-item.date {
+  font-size: 12px;
+}
+
+.nav-item:first-child {
+  margin-left: 16px;
+}
+
+.nav-item:last-child {
+  margin-right: 16px;
+}
+
+.nav-item.choosed {
+  background-color: #1B4B78;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8em;
+  margin-bottom: 32px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.tr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 1em;
+  background-color: #DFE7EE;
+  border-radius: 1em;
+}
+
+.tr:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.tr.comment {
+  width: 104px;
+  justify-content: left;
+  font-size: small;
+}
+
+.comment-item {
+  margin-left: 4px;
+  margin-right: 16px;
+  color: #1B4B78;
+}
+
+.comment-item:last-child {
+  margin-right: 4px;
+}
+
+.td.room-name {
+  color: #1B4B78;
+  width: 5em;
+}
+
+.td.status-list {
+  display: flex;
+}
+
+.status {
+  width: 10px;
+  height: 15px;
+  border-radius: 5px;
+  margin: 1px;
+}
+
+.free {
+  background-color: #79B663;
+}
+
+.inuse {
+  background-color: #E95858;
+}
+
+.delimiter {
+  width: 0.5em;
+}
