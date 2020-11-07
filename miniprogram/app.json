@@ -2,7 +2,7 @@
   "pages": [
     "pages/index/index"
   ],
-  "darkmode": false,
+  "darkmode": true,
   "themeLocation": "theme.json",
   "window": {
     "backgroundColor": "@backgroundColor",
@@ -11,5 +11,6 @@
     "navigationBarBackgroundColor": "@navigationBarBackgroundColor",
     "navigationBarTextStyle": "@navigationBarTextStyle"
   },
-  "style": "v2"
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
 }

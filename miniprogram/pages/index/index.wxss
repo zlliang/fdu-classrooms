@@ -27,9 +27,8 @@ page {
 .nav-item {
   display: inline-block;
   font-size: small;
-  border-radius: 10px;
-  padding: 0.3em 0.6em;
-  margin-left: 8px;
+  border-radius: 12px;
+  padding: 6px 14px;
 }
 
 .nav-item.date {
@@ -51,8 +50,8 @@ page {
 .table {
   display: flex;
   flex-direction: column;
-  margin-top: 8em;
-  margin-bottom: 32px;
+  margin-top: 9em;
+  margin-bottom: 48px;
   margin-left: 16px;
   margin-right: 16px;
 }
@@ -61,9 +60,10 @@ page {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5em 1em;
+  height: 24px;
+  padding: 8px 16px;
   background-color: #DFE7EE;
-  border-radius: 1em;
+  border-radius: 16px;
 }
 
 .tr:not(:last-child) {
@@ -71,24 +71,42 @@ page {
 }
 
 .tr.comment {
-  width: 104px;
-  justify-content: left;
+  height: 16px;
+  background: linear-gradient(to right, #DFE7EE, white 70%);
   font-size: small;
 }
 
+.comment-cell {
+  display: flex;
+}
+
 .comment-item {
-  margin-left: 4px;
-  margin-right: 16px;
   color: #1B4B78;
 }
 
-.comment-item:last-child {
-  margin-right: 4px;
+.c1 {
+  margin-left: 4px;
+  margin-right: 16px;
+}
+
+.c2 {
+  margin-left: 4px;
+}
+
+.c3 {
+  margin-right: 35px;
+}
+
+.c4 {
+  margin-right: 36px;
+}
+
+.c5 {
+  margin-right: 13px;
 }
 
 .td.room-name {
   color: #1B4B78;
-  width: 5em;
 }
 
 .td.status-list {
@@ -97,19 +115,60 @@ page {
 
 .status {
   width: 10px;
-  height: 15px;
-  border-radius: 5px;
+  height: 16px;
+  border-radius: 6px;
   margin: 1px;
 }
 
-.free {
+.status.free {
   background-color: #79B663;
 }
 
-.inuse {
+.status.inuse {
   background-color: #E95858;
 }
 
+.status.loading {
+  background-color: #AAAAAA;
+}
+
 .delimiter {
-  width: 0.5em;
+  width: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  page {
+    background-color: #08141F;
+  }
+  .nav {
+    color: #B2C3D2;
+    background-color: #0B2843;
+  }
+  .nav-item.choosed {
+    background-color: #08141F;
+  }
+  .tr {
+    background-color: #0B2843;
+  }
+  .tr.comment {
+    background: linear-gradient(to right, #0B2843, #08141F 70%);
+  }
+  .comment-item {
+    color: #B2C3D2;
+  }
+  .td.room-name {
+    color: #B2C3D2;
+  }
+
+  .status.free {
+    background-color: #4B8437;
+  }
+  
+  .status.inuse {
+    background-color: #A72F2F;
+  }
+  
+  .status.loading {
+    background-color: #555555;
+  }
 }

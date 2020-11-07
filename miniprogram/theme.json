@@ -6,9 +6,9 @@
     "navigationBarTextStyle": "white"
   },
   "dark": {
-    "backgroundColor": "#191919",
+    "backgroundColor": "#08141F",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#1B4B78",
+    "navigationBarBackgroundColor": "#0B2843",
     "navigationBarTextStyle": "white"
   }
 }

@@ -31,6 +31,7 @@ Page({
     }
 
     _this.setData({
+      data: undefined,
       dates: dates,
       choosedDate: dates[0]
     })
@@ -51,6 +52,10 @@ Page({
   tapDate: function(event) {
     let _this = this
     const date = event.currentTarget.dataset.date
+
+    _this.setData({
+      data: 0
+    })
 
     wx.request({
       url: "https://fdu-classrooms-data.vercel.app/data/" + date + ".json",
