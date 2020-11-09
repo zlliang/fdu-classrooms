@@ -1,10 +1,7 @@
 const dayjs = require('dayjs')
 const roomMetadata = require('./room-metadata')
 
-let now = dayjs()
-let today = now.startOf('day')
-
-let timeIntervals = {
+const timeIntervals = {
   1: [{h: 6, m: 0}, {h: 8, m: 45}],
   2: [{h: 8, m: 45}, {h: 9, m: 40}],
   3: [{h: 9, m: 40}, {h: 10, m: 40}],
@@ -21,24 +18,6 @@ let timeIntervals = {
   14: [{h: 21, m: 5}, {h: 22, m: 30}]
 }
 
-let nowInterval = 0
-for (let i in timeIntervals) {
-  let startTime = today.add(timeIntervals[i][0].h, 'hour').add(timeIntervals[i][0].m, 'minute')
-  let endTime = today.add(timeIntervals[i][1].h, 'hour').add(timeIntervals[i][1].m, 'minute')
-  if (now.isAfter(startTime) && now.isBefore(endTime)) {
-    nowInterval = i
-    break
-  }
-}
-
-let dates = []
-for (let i of [0, 1, 2, 3, 4, 5, 6]) {
-  let day = today.add(i, 'day')
-  dates.push(day.format('YYYY-MM-DD'))
-}
-
-let choosedDate = dates[0]
-
 const campuses = ["邯郸校区", "江湾校区", "枫林校区", "张江校区"]
 
 let choosedCampus = "邯郸校区"
@@ -53,10 +32,19 @@ const buildings = {
 let choosedBuilding= "HGX"
 
 Page({
-  data: { dates, choosedDate, nowInterval, campuses, choosedCampus, buildings, choosedBuilding, roomMetadata },
+  data: { campuses, choosedCampus, buildings, choosedBuilding, roomMetadata },
 
   onLoad: function(options) {
     let _this = this
+
+    let now = dayjs()
+    let today = now.startOf('day')
+
+    let dates = []
+    for (let i of [0, 1, 2, 3, 4, 5, 6]) {
+      let day = today.add(i, 'day')
+      dates.push(day.format('YYYY-MM-DD'))
+    }
 
     _this.setData({
       data: 0
@@ -73,6 +61,31 @@ Page({
         })
       }
     })
+  },
+
+  onShow: function() {
+    let now = dayjs()
+    let today = now.startOf('day')
+  
+    let nowInterval = 0
+    for (let i in timeIntervals) {
+      let startTime = today.add(timeIntervals[i][0].h, 'hour').add(timeIntervals[i][0].m, 'minute')
+      let endTime = today.add(timeIntervals[i][1].h, 'hour').add(timeIntervals[i][1].m, 'minute')
+      if (now.isAfter(startTime) && now.isBefore(endTime)) {
+        nowInterval = i
+        break
+      }
+    }
+
+    let dates = []
+    for (let i of [0, 1, 2, 3, 4, 5, 6]) {
+      let day = today.add(i, 'day')
+      dates.push(day.format('YYYY-MM-DD'))
+    }
+
+    let choosedDate = dates[0]
+
+    this.setData({ dates, choosedDate, nowInterval })
   },
 
   tapDate: function(event) {
