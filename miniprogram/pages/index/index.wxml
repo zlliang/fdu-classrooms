@@ -54,8 +54,14 @@
         wx:for-item="statusList"
         wx:key="roomName"
         class="tr"
-      >
-        <view class="td room-name">{{roomName}}</view>
+      > 
+        <view class="td room-name-tuple">
+          <view class="room-name">{{roomName}}</view>
+          <view class="room-metadata">
+            <view>座位数 {{ roomMetadata[roomName].c}}</view>
+            <view wx:if="{{roomMetadata[roomName].note}}">/ {{roomMetadata[roomName].note}}</view>
+          </view>
+        </view>
         <view class="td status-list">
           <view
             wx:for="{{[1, 2, 3, 4, 5]}}"

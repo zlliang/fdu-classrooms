@@ -60,7 +60,7 @@ page {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 24px;
+  height: 28px;
   padding: 8px 16px;
   background-color: #DFE7EE;
   border-radius: 16px;
@@ -105,8 +105,24 @@ page {
   margin-right: 13px;
 }
 
-.td.room-name {
+.td.room-name-tuple {
+  display: flex;
+  flex-direction: column;
+}
+
+.room-name {
   color: #1B4B78;
+}
+
+.room-metadata {
+  display: flex;
+  color: #7795b1;
+  font-size: 8px;
+  margin-top: -3px;
+}
+
+.room-metadata view {
+  margin-right: 3px;
 }
 
 .td.status-list {
@@ -133,7 +149,7 @@ page {
   content: '∙';
   color: #1B4B78;
   position: relative;
-  top: 9px;
+  top: 10px;
   display: flex;
   justify-content: center;
   width: 10px;
@@ -168,8 +184,13 @@ page {
   .comment-item {
     color: #B2C3D2;
   }
-  .td.room-name {
+  .room-name {
     color: #B2C3D2;
+  }
+  .room-metadata {
+    color: #68849e;
+    font-size: 8px;
+    margin-top: -3px;
   }
 
   .status.free {

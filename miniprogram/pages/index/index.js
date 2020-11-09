@@ -1,4 +1,5 @@
 const dayjs = require('dayjs')
+const roomMetadata = require('./room-metadata')
 
 let now = dayjs()
 let today = now.startOf('day')
@@ -52,7 +53,7 @@ const buildings = {
 let choosedBuilding= "HGX"
 
 Page({
-  data: { dates, choosedDate, nowInterval, campuses, choosedCampus, buildings, choosedBuilding },
+  data: { dates, choosedDate, nowInterval, campuses, choosedCampus, buildings, choosedBuilding, roomMetadata },
 
   onLoad: function(options) {
     let _this = this
