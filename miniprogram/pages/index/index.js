@@ -1,8 +1,42 @@
 const dayjs = require('dayjs')
 
-let dates = []
+let now = dayjs()
+let today = now.startOf('day')
 
-let choosedDate = ""
+let timeIntervals = {
+  1: [{h: 6, m: 0}, {h: 8, m: 45}],
+  2: [{h: 8, m: 45}, {h: 9, m: 40}],
+  3: [{h: 9, m: 40}, {h: 10, m: 40}],
+  4: [{h: 10, m: 40}, {h: 11, m: 35}],
+  5: [{h: 11, m: 35}, {h: 12, m: 30}],
+  6: [{h: 12, m: 30}, {h: 14, m: 15}],
+  7: [{h: 14, m: 15}, {h: 15, m: 10}],
+  8: [{h: 15, m: 10}, {h: 16, m: 10}],
+  9: [{h: 16, m: 10}, {h: 17, m: 5}],
+  10: [{h: 17, m: 5}, {h: 18, m: 0}],
+  11: [{h: 18, m: 0}, {h: 19, m: 15}],
+  12: [{h: 19, m: 15}, {h: 20, m: 10}],
+  13: [{h: 20, m: 10}, {h: 21, m: 5}],
+  14: [{h: 21, m: 5}, {h: 22, m: 30}]
+}
+
+let nowInterval = 0
+for (let i in timeIntervals) {
+  let startTime = today.add(timeIntervals[i][0].h, 'hour').add(timeIntervals[i][0].m, 'minute')
+  let endTime = today.add(timeIntervals[i][1].h, 'hour').add(timeIntervals[i][1].m, 'minute')
+  if (now.isAfter(startTime) && now.isBefore(endTime)) {
+    nowInterval = i
+    break
+  }
+}
+
+let dates = []
+for (let i of [0, 1, 2, 3, 4, 5, 6]) {
+  let day = today.add(i, 'day')
+  dates.push(day.format('YYYY-MM-DD'))
+}
+
+let choosedDate = dates[0]
 
 const campuses = ["邯郸校区", "江湾校区", "枫林校区", "张江校区"]
 
@@ -18,22 +52,13 @@ const buildings = {
 let choosedBuilding= "HGX"
 
 Page({
-  data: { dates, choosedDate, campuses, choosedCampus, buildings, choosedBuilding },
+  data: { dates, choosedDate, nowInterval, campuses, choosedCampus, buildings, choosedBuilding },
 
   onLoad: function(options) {
     let _this = this
 
-    let today = dayjs()
-    dates = []
-    for (let i of [0, 1, 2, 3, 4, 5, 6]) {
-      let day = today.add(i, 'day')
-      dates.push(day.format('YYYY-MM-DD'))
-    }
-
     _this.setData({
-      data: 0,
-      dates: dates,
-      choosedDate: dates[0]
+      data: 0
     })
 
     wx.request({

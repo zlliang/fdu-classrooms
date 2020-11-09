@@ -61,21 +61,21 @@
             wx:for="{{[1, 2, 3, 4, 5]}}"
             wx:for-item="n"
             wx:key="n"
-            class="status {{statusList[n-1] == 1 ? 'inuse' : 'free'}}"
+            class="status {{statusList[n-1] == 1 ? 'inuse' : 'free'}} {{nowInterval == n && choosedDate == dates[0] ? 'now' : ''}}"
           ></view>
           <view class="delimiter"></view>
           <view
             wx:for="{{[6, 7, 8, 9, 10]}}"
             wx:for-item="n"
             wx:key="n"
-            class="status {{statusList[n-1] == 1 ? 'inuse' : 'free'}}"
+            class="status {{statusList[n-1] == 1 ? 'inuse' : 'free'}} {{nowInterval == n && choosedDate == dates[0] ? 'now' : ''}}"
           ></view>
           <view class="delimiter"></view>
           <view
             wx:for="{{[11, 12, 13, 14]}}"
             wx:for-item="n"
             wx:key="n"
-            class="status {{statusList[n-1] == 1 ? 'inuse' : 'free'}}"
+            class="status {{statusList[n-1] == 1 ? 'inuse' : 'free'}} {{nowInterval == n && choosedDate == dates[0] ? 'now' : ''}}"
           ></view>
         </view>
       </view>

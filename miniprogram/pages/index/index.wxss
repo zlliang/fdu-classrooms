@@ -124,8 +124,20 @@ page {
   background-color: #79B663;
 }
 
+
 .status.inuse {
   background-color: #E95858;
+}
+
+.status.now:after {
+  content: '∙';
+  color: #1B4B78;
+  position: relative;
+  top: 9px;
+  display: flex;
+  justify-content: center;
+  width: 10px;
+  border-radius: 50%;
 }
 
 .status.loading {
@@ -166,6 +178,10 @@ page {
   
   .status.inuse {
     background-color: #A72F2F;
+  }
+
+  .status.now:after {
+    color: #336DA3;
   }
   
   .status.loading {
