@@ -149,7 +149,7 @@ page {
   content: '∙';
   color: #1B4B78;
   position: relative;
-  top: 10px;
+  top: 9px;
   display: flex;
   justify-content: center;
   width: 10px;
@@ -176,10 +176,10 @@ page {
     background-color: #08141F;
   }
   .tr {
-    background-color: #0B2843;
+    background-color: #102e4b;
   }
   .tr.comment {
-    background: linear-gradient(to right, #0B2843, #08141F 70%);
+    background: linear-gradient(to right, #102e4b, #08141F 70%);
   }
   .comment-item {
     color: #B2C3D2;
@@ -188,7 +188,7 @@ page {
     color: #B2C3D2;
   }
   .room-metadata {
-    color: #68849e;
+    color: #7597b6;
     font-size: 8px;
     margin-top: -3px;
   }
@@ -202,7 +202,7 @@ page {
   }
 
   .status.now:after {
-    color: #336DA3;
+    color: #7597b6;
   }
   
   .status.loading {
