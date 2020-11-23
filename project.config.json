@@ -35,7 +35,7 @@
     "minifyWXSS": true
   },
   "appid": "wxaa356907b12dbea1",
-  "projectname": "kongjiaoshi",
+  "projectname": "fdu-classrooms",
   "libVersion": "2.8.1",
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
