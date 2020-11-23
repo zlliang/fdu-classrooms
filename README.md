@@ -1,12 +1,10 @@
-# 云开发 quickstart
+# FDU Classrooms 复旦空教室（微信小程序）
 
-这是云开发的快速启动指引，其中演示了如何上手使用云开发的三大基础能力：
+使用[小程序开发框架](https://developers.weixin.qq.com/miniprogram/dev/framework/)开发的复旦空闲教室查询系统。
 
-- 数据库：一个既可在小程序前端操作，也能在云函数中读写的 JSON 文档型数据库
-- 文件存储：在小程序前端直接上传/下载云端文件，在云开发控制台可视化管理
-- 云函数：在云端运行的代码，微信私有协议天然鉴权，开发者只需编写业务逻辑代码
+- 使用 Python 抓取校园相关网站提供的空教室数据并整合，实现快捷便利的校内空闲教室查询功能
+- 自行设计 UI，并使用小程序框架进行 CSS 实现；适配了“深色模式”等移动端新特性
 
-## 参考文档
+小程序截图：
 
-- [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
-
+<img src="screenshots/screenshot1.png" alt="screenshot1" width="40%" /><img src="screenshots/screenshot2.png" alt="screenshot2" width="40%" />
